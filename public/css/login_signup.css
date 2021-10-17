@@ -1,11 +1,11 @@
 body {
     background-color: #1cbb9b;
 }
-.login-box {
+.login-box, .signup-box {
     position: relative;
     margin: 10px auto;
     width: 500px;
-    height: 380px;
+    height: 480px;
     background-color: #fff;
     padding: 10px;
     border-radius: 3px;
@@ -41,10 +41,8 @@ body {
 .email-login,
 .email-signup {
     position: relative;
-    float: left;
     width: 100%;
-    height: auto;
-    margin-top: 20px;
+    height: 90%;
     text-align: center;
 }
 .u-form-group {
@@ -52,9 +50,10 @@ body {
     margin-bottom: 10px;
 }
 .u-form-group input[type="email"],
+.u-form-group input[type="text"],
 .u-form-group input[type="password"] {
-    width: calc(50% - 22px);
-    height: 45px;
+    width: auto;
+    height: auto;
     outline: none;
     border: 1px solid #ddd;
     padding: 0 10px;
@@ -79,11 +78,4 @@ body {
     padding: 14px 0;
     border-radius: 2px;
     text-transform: uppercase;
-}
-.forgot-password {
-    width: 50%;
-    text-align: left;
-    text-decoration: underline;
-    color: #888;
-    font-size: 0.75rem;
 }

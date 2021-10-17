@@ -18,8 +18,6 @@ class CreateProjectInfosTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('name')->nullable();
             $table->string('description',255)->nullable();
-            $table->date('from')->nullable()->default(new DateTime());
-            $table->date('to')->nullable()->default(new DateTime());
             $table->timestamps();
         });
     }
