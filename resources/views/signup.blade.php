@@ -16,9 +16,6 @@
                     <input type="password" name="password" placeholder="Password" />
                 </div>
                 <div class="u-form-group">
-                    <input type="password" name="confirm_password" placeholder="Confirm Password" />
-                </div>
-                <div class="u-form-group">
                     <button type="submit">Sign Up</button>
                 </div>
             </form>

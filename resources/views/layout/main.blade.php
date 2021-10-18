@@ -33,21 +33,27 @@
                 <li>
                     <a href="{{ route('home') }}">home</a>
                 </li>
-                @if(Session::get('user'))
+                @if (Session::get('user'))
                     <li>
-                        <a >Welcome | {{ Session::get('user_name') }}</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('create') }}">Create Cv</a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/show'.'/'.Session::get('user')) }}">Preview Cv</a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/edit'.'/'.Session::get('user')) }}">Edit Cv</a>
+                        <a>Welcome | {{ Session::get('user_name') }}</a>
                     </li>
 
-    
+                    @if (Session::get('cv_status') == 0)
+                        <li>
+                            <a href="{{ route('create') }}">Create Resume</a>
+                        </li>
+                    @endif
+                    @if (Session::get('cv_status') == 1)
+                        <li>
+                            <a href="{{ url('/show' . '/' . Session::get('user')) }}">Preview Resume</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/edit' . '/' . Session::get('user')) }}">Edit Resume</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/download_pdf' . '/' . Session::get('user')) }}">Download Resume</a>
+                        </li>
+                    @endif
                 @else
                     <li>
                         <a href="{{ route('register') }}">Sign Up</a>
@@ -55,9 +61,8 @@
                     <li>
                         <a href="{{ route('login') }}">Sign In</a>
                     </li>
-
                 @endif
-                @if(Session::get('user'))
+                @if (Session::get('user'))
                     <li>
                         <a href="{{ route('logout') }}">Logout</a>
                     </li>

@@ -30,6 +30,8 @@ class UserController extends Controller
         if ($decrypted_password == $request->password) {
             $request->session()->put('user_name', $user->name);
             $request->session()->put('user', $user->id);
+            $request->session()->put('cv_status', $user->cv_created);
+
             return redirect('/');
         } else {
             return redirect()->back()->withInput();
@@ -45,7 +47,6 @@ class UserController extends Controller
     public function signup(Request $request)
     {
         $user = new User;
-
         $user->name = $request->user;
         $user->email = $request->email;
         $user->password = Crypt::encrypt($request->password);
@@ -79,6 +80,7 @@ class UserController extends Controller
         $user->phone = $request->user_phone;
         $user->about = $request->user_about;
         $user->current_city = $request->current_city;
+        $user->cv_created = 1;
         $user->save();
 
         foreach ($request->institute_name as $key => $value) {
@@ -113,6 +115,7 @@ class UserController extends Controller
             $project->description = $request->project_description[$key];
             $project->save();
         }
+        $request->session()->put('cv_status', $user->cv_created);
 
         return redirect('show/'.$request->user_id.'');
     }
@@ -138,8 +141,8 @@ class UserController extends Controller
         $education = AcademicInfo::where('user_id', $id)->get();
         $experience = ExperienceInfo::where('user_id', $id)->get();
         $project = ProjectInfo::where('user_id', $id)->get();
-        $pdf = PDF::loadView('user.show', compact('user', 'education', 'experience', 'project'));
-        return $pdf->download('cv.pdf');
+        $pdf = PDF::loadView('user.download_pdf', compact('user', 'education', 'experience', 'project'));
+        return $pdf->download('resume.pdf');
     }
     /**
      * Show the form for editing the specified resource.
