@@ -1,4 +1,8 @@
-CV Builder web application
+<h1>Resume Builder web application created by Imran Yahya.</h1>
+
+<h3><b>references used to get two templates.<b></h3>
+<p>resume preview layout = "https://codepen.io/jjpk/pen/rpENRd"</p>
+<p>create and edit resume form = "https://codepen.io/gymratpacks/pen/VKzBEp"</p>
 
 
 
