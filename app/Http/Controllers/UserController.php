@@ -142,7 +142,7 @@ class UserController extends Controller
         $experience = ExperienceInfo::where('user_id', $id)->get();
         $project = ProjectInfo::where('user_id', $id)->get();
         $pdf = PDF::loadView('user.download_pdf', compact('user', 'education', 'experience', 'project'));
-        return $pdf->download('resume.pdf');
+        return $pdf->download('CV.pdf');
     }
     /**
      * Show the form for editing the specified resource.

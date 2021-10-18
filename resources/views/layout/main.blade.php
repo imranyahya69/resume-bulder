@@ -21,7 +21,7 @@
         <div class="nav-center">
             <!-- nav header -->
             <div class="nav-header">
-                <h1>Resume Builder</h1>
+                <h1>CV Builder</h1>
                 <button class="nav-toggle">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -40,18 +40,18 @@
 
                     @if (Session::get('cv_status') == 0)
                         <li>
-                            <a href="{{ route('create') }}">Create Resume</a>
+                            <a href="{{ route('create') }}">Create CV</a>
                         </li>
                     @endif
                     @if (Session::get('cv_status') == 1)
                         <li>
-                            <a href="{{ url('/show' . '/' . Session::get('user')) }}">Preview Resume</a>
+                            <a href="{{ url('/show' . '/' . Session::get('user')) }}">Preview CV</a>
                         </li>
                         <li>
-                            <a href="{{ url('/edit' . '/' . Session::get('user')) }}">Edit Resume</a>
+                            <a href="{{ url('/edit' . '/' . Session::get('user')) }}">Edit CV</a>
                         </li>
                         <li>
-                            <a href="{{ url('/download_pdf' . '/' . Session::get('user')) }}">Download Resume</a>
+                            <a href="{{ url('/download_pdf' . '/' . Session::get('user')) }}">Download CV</a>
                         </li>
                     @endif
                 @else

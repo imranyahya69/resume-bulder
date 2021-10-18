@@ -1,4 +1,4 @@
-Resume Builder web application
+CV Builder web application
 
 
 
