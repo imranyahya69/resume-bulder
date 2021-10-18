@@ -1,4 +1,8 @@
-Resume Builder web application
+Resume Builder web application created by Imran Yahya.
+
+references used to get two templates.
+resume preview layout = "https://codepen.io/jjpk/pen/rpENRd"
+create and edit resume form = "https://codepen.io/gymratpacks/pen/VKzBEp"
 
 
 
